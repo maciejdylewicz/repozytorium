@@ -20,4 +20,9 @@
         <Imię_trenera>Teresa</Imię_trenera>
         <Nazwisko_trenera>Bajer</Nazwisko_trenera>
     </trener>
+    <trener>
+        <id_trenera>N</id_trenera>
+        <Imię_trenera>Nikola</Imię_trenera>
+        <Nazwisko_trenera>Chudziak</Nazwisko_trenera>
+    </trener>
 </trenerzy>
