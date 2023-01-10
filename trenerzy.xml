@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trenerzy>
+    <trener>
+        <id_trenera>I</id_trenera>
+        <Imię_trenera>Iza</Imię_trenera>
+        <Nazwisko_trenera>Dylewicz</Nazwisko_trenera>
+    </trener>
+    <trener>
+        <id_trenera>B</id_trenera>
+        <Imię_trenera>Basia</Imię_trenera>
+        <Nazwisko_trenera>Skowrońska</Nazwisko_trenera>
+    </trener>
+    <trener>
+        <id_trenera>A</id_trenera>
+        <Imię_trenera>Asia</Imię_trenera>
+        <Nazwisko_trenera>Zastawa</Nazwisko_trenera>
+    </trener>
+    <trener>
+        <id_trenera>T</id_trenera>
+        <Imię_trenera>Teresa</Imię_trenera>
+        <Nazwisko_trenera>Bajer</Nazwisko_trenera>
+    </trener>
+</trenerzy>
