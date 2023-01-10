@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+  <record>
+    <name>Jan</name>
+    <surname>Kowalski</surname>
+    <phone>123-456-789</phone>
+  </record>
+  <record>
+    <name>Anna</name>
+    <surname>Nowak</surname>
+    <phone>987-654-321</phone>
+  </record>
+  <record>
+    <name>Piotr</name>
+    <surname>Wiśniewski</surname>
+    <phone>555-555-555</phone>
+  </record>
+</data>
