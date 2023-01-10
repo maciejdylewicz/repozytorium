@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
-    <title>Data from XML1</title>
+    <title>Data from XML</title>
 </head>
-<body>nowy
+<body>
     <div class="container">
-        <h1>Data from XML1</h1>
+        <h1>Data from XML</h1>
         <table class="table">
             <thead>
                 <tr>
@@ -45,7 +45,7 @@
                 document.getElementById("data").innerHTML = table;
             }
         };
-        xhttp.open("GET", "../baza.xml", true);
+        xhttp.open("GET", "baza.xml", true);
         xhttp.send();
     </script>
 </body>
