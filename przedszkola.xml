@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<przedszkola>
+    <przedszkole>
+        <id_trenera>I</id_trenera>
+        <id_przedszkola>SK</id_przedszkola>
+        <nazwa_przedszkola>BAJECZKA</nazwa_przedszkola>
+        <adres_przedszkola>KOZIEGŁOWY</adres_przedszkola>
+    </przedszkole>
+    <przedszkole>
+        <id_trenera>I</id_trenera>
+        <id_przedszkola>BM</id_przedszkola>
+        <nazwa_przedszkola>BAŃKA MYDLANA</nazwa_przedszkola>
+        <adres_przedszkola>OWIŃSKA</adres_przedszkola>
+    </przedszkole>
+    <przedszkole>
+        <id_trenera>I</id_trenera>
+        <id_przedszkola>PS</id_przedszkola>
+        <nazwa_przedszkola>PASTELOWY ŚWIAT</nazwa_przedszkola>
+        <adres_przedszkola>POBIEDZISKA</adres_przedszkola>
+    </przedszkole>
+</przedszkola>
