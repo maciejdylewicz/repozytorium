@@ -1,49 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Dane o trenerach i przedszkolach</title>
-  <script>
-    function loadXMLDoc() {
-      var xhttp1 = new XMLHttpRequest();
-      xhttp1.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          myFunction(this, "table1");
-        }
-      };
-      xhttp1.open("GET", "trenerzy.xml", true);
-      xhttp1.send();
-      
-      var xhttp2 = new XMLHttpRequest();
-      xhttp2.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          myFunction(this, "table2");
-        }
-      };
-      xhttp2.open("GET", "przedszkola.xml", true);
-      xhttp2.send();
-    }
-    function myFunction(xml, tableId) {
-      var i;
-      var xmlDoc = xml.responseXML;
-      var table = "<tr><th>Id Trenera</th><th>Imię Trenera</th><th>Nazwisko Trenera</th></tr>";
-      var x = xmlDoc.getElementsByTagName("trener");
-      for (i = 0; i <x.length; i++) { 
-        table += "<tr><td>" +
-        x[i].getElementsByTagName("id_trenera")[0].childNodes[0].nodeValue +
-        "</td><td>" +
-        x[i].getElementsByTagName("Imię_trenera")[0].childNodes[0].nodeValue +
-        "</td><td>" +
-        x[i].getElementsByTagName("Nazwisko_trenera")[0].childNodes[0].nodeValue +
-        "</td></tr>";
-      }
-      document.getElementById(tableId).innerHTML = table;
-    }
-  </script>
+  <title>Strona główna</title>
+  <script src="trenerzy.js"></script>
 </head>
-<body onload="loadXMLDoc()">
-  <h2>Trenerzy</h2>
-  <table id="table1"></table>
-  <h2>Przedszkola</h2>
-  <table id="table2"></table>
+<body onload="loadTrenerzy()">
+  <h1>Strona główna</h1>
+  <table id="table-trenerzy"></table>
 </body>
 </html>
