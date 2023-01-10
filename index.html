@@ -17,18 +17,60 @@
       function myFunction(xml) {
         var i;
         var xmlDoc = xml.responseXML;
-        var table="<tr><th>Name</th><th>Surname</th><th>Phone</th></tr>";
+        var table="<tr><th>Name<button onclick='sortTable(0)'>&#x25B2;</button><button onclick='sortTable(0,true)'>&#x25BC;</button></th><th>Surname<button onclick='sortTable(1)'>&#x25B2;</button><button onclick='sortTable(1,true)'>&#x25BC;</button></th><th>Phone<button onclick='sortTable(2)'>&#x25B2;</button><button onclick='sortTable(2,true)'>&#x25BC;</button></th></tr>";
         var x = xmlDoc.getElementsByTagName("record");
         for (i = 0; i < x.length; i++) {
           table += "<tr><td>" +
           x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue +
           "</td><td>" +
-          x[i].getElementsByTagName("surname")[0].childNodes[0].nodeValue +
+          x[i].getElementsByTagName("surname")[0].childNodes
+  .nodeValue +
           "</td><td>" +
           x[i].getElementsByTagName("phone")[0].childNodes[0].nodeValue +
           "</td></tr>";
         }
         document.getElementById("demo").innerHTML = table;
+      }
+      
+      function sortTable(n,reverse) {
+        var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+        table = document.getElementById("demo");
+        switching = true;
+        dir = "asc"; 
+        if(reverse)
+            dir = "desc"
+
+        while (switching) {
+          switching = false;
+          rows = table.rows;
+          for (i = 1; i < (rows.length - 1); i++) {
+            shouldSwitch = false;
+            x = rows[i].getElementsByTagName("TD")[n];
+            y = rows[i + 1].getElementsByTagName("TD")[n];
+            if (dir == "asc") {
+              if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                shouldSwitch
+                shouldSwitch = true;
+                break;
+              }
+            } else if (dir == "desc") {
+              if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                shouldSwitch = true;
+                break;
+              }
+            }
+          }
+          if (shouldSwitch) {
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+            switchcount ++; 
+          } else {
+            if (switchcount == 0 && dir == "asc") {
+              dir = "desc";
+              switching = true;
+            }
+          }
+        }
       }
     </script>
   </head>
