@@ -1,52 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Data from XML</title>
-</head>
-<body>
-    <div class="container">
-        <h1>Data from XML</h1>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Imię</th>
-                    <th>Nazwisko</th>
-                    <th>Telefon</th>
-                </tr>
-            </thead>
-            <tbody id="data">
-                <!-- The data will be added here dynamically -->
-            </tbody>
-        </table>
-    </div>
-
+<html>
+  <head>
+    <title>My website</title>
     <script>
+      function loadXMLDoc() {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                // Parse the XML file
-                var xmlDoc = this.responseXML;
-                var table = "";
-                // Get all the data from the XML file
-                var data = xmlDoc.getElementsByTagName("data");
-                // Loop through all the data
-                for (var i = 0; i < data.length; i++) {
-                    var name = data[i].getElementsByTagName("name")[0].childNodes[0].nodeValue;
-                    var surname = data[i].getElementsByTagName("surname")[0].childNodes[0].nodeValue;
-                    var phone = data[i].getElementsByTagName("phone")[0].childNodes[0].nodeValue;
-                    // Add the data to the table
-                    table += "<tr><td>" + name + "</td><td>" + surname + "</td><td>" + phone + "</td></tr>";
-                }
-                // Add the table to the page
-                document.getElementById("data").innerHTML = table;
-            }
+          if (this.readyState == 4 && this.status == 200) {
+            myFunction(this);
+          }
         };
         xhttp.open("GET", "baza.xml", true);
         xhttp.send();
+      }
+
+      function myFunction(xml) {
+        var i;
+        var xmlDoc = xml.responseXML;
+        var table="<tr><th>Name</th><th>Surname</th><th>Phone</th></tr>";
+        var x = xmlDoc.getElementsByTagName("record");
+        for (i = 0; i < x.length; i++) {
+          table += "<tr><td>" +
+          x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue +
+          "</td><td>" +
+          x[i].getElementsByTagName("surname")[0].childNodes[0].nodeValue +
+          "</td><td>" +
+          x[i].getElementsByTagName("phone")[0].childNodes[0].nodeValue +
+          "</td></tr>";
+        }
+        document.getElementById("demo").innerHTML = table;
+      }
     </script>
-</body>
+  </head>
+  <body onload="loadXMLDoc()">
+    <table id="demo"></table>
+  </body>
 </html>
