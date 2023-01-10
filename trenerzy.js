@@ -63,3 +63,9 @@ function addRecord() {
     cell2.innerHTML = imie;
     cell3.innerHTML = nazwisko;
 }
+
+function deleteRecord(r) {
+    var i = r.parentNode.parentNode.rowIndex;
+    document.getElementById("table-trenerzy").deleteRow(i);
+}
+
